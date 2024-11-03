@@ -11,6 +11,6 @@ Config package to setup SyncThing on the armv7 based ReadyNAS systems.
 - SyncThing service should be ready at this point.
     - Pick an user to run the service under. It can be the primary personalized user (not root, neither admin), e.g. `johndoe`.
     - Start service instance for the user `systemctl start syncthing@johndoe`.
-    - Reconfigure it to run GUI on all interfaces `sed 's~\(<address>\)[^>]*\(:8384</address>\)~\10.0.0.0\2~g' /home/johndoe/.local/state/syncthing/config.xml` assuming ReadyNAS is running inside a private network. If it is exposed to public network, then modify `0.0.0.0` in above command accordingly.
+    - Reconfigure it to run GUI on all interfaces `IP=0.0.0.0 sed -i 's~\(<address>\)[^>]*\(:8384</address>\)~\1$IP\2~g' /home/johndoe/.local/state/syncthing/config.xml` assuming ReadyNAS is running inside a private network. If it is exposed to public network, then modify `0.0.0.0` in above command accordingly.
     - Restart the service `systemctl restart syncthing@johndoe`
 - Access the GUI web interface at `http://<readynas-ip/host>:8384/`

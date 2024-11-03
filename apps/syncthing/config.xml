@@ -1,0 +1,13 @@
+<Application resource-id="syncthing"><!-- 'resource-id' must be AppName -->
+  <Name>SyncThing</Name><!-- Any desciptive name, upto 48 chars -->
+  <Author>Shaan</Author><!-- Authers name. upto 48 chars -->
+  <Version>1.0.0</Version><!-- Version -->
+  <RequireReboot>0</RequireReboot><!-- If non-zero, it indicate reboot is required. -->
+  <ConfigURL></ConfigURL><!-- 'localhost' will be replaced by framework JS. -->
+  <LaunchURL>http://localhost:8384/</LaunchURL><!-- 'localhost' will be replaced by framework JS. -->
+  <InfoURL>https://www.syncthing.net</InfoURL>
+  <ReservePort>8384</ReservePort>
+  <DebianPackage>syncthing</DebianPackage>
+  <ServiceName>syncthing@shaan.service</ServiceName><!-- no service required -->
+  <Description lang="en-us">Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes.</Description>
+</Application>
